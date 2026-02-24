@@ -1,0 +1,295 @@
+\documentclass[10pt, letterpaper]{article}
+
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Uday Tiwari's CV},
+    pdfauthor={Uday Tiwari},
+    pdfcreator={LaTeX with Overleaf},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.3 cm
+}{
+    0.2 cm
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\newcommand{\placelastupdatedtext}{
+  \AddToShipoutPictureFG*{
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+    }}}
+  }
+}
+
+\let\hrefWithoutArrow\href
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{25 pt}{25 pt}\selectfont Uday Tiwari
+
+        \vspace{5 pt}
+
+        \normalsize
+        \mbox{\faIcon{phone}\; +91-7417476033}
+        \kern 5.0 pt
+        \AND
+        \kern 5.0 pt
+        \mbox{\hrefWithoutArrow{mailto:udaytiwari720@gmail.com}{\faIcon{envelope}\; udaytiwari720@gmail.com}}
+        \kern 5.0 pt
+        \AND
+        \kern 5.0 pt
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/udytwr}{\faIcon{linkedin}\;Uday Tiwari}}
+        \kern 5.0 pt
+        \AND
+        \kern 5.0 pt
+        \mbox{\hrefWithoutArrow{https://github.com/udaycmd}{\faIcon{github}\;udaycmd}}
+        \vspace{5 pt}
+    \end{header}
+
+    \vspace{5 pt - 0.3 cm}
+
+     \section{Education}
+
+        \begin{twocolentry}{
+            August 2022 – July 2026
+        }
+            \textbf{Bipin Tripathi Kumaon Institute of  Technology}, B.Tech in CSE\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}\item SGPA: 6.2/10\end{highlights}
+        \end{onecolentry}
+
+        \begin{twocolentry}{
+            April 2022
+        }
+            \textbf{Universal Convent Senior Secondary School}, Intermediate\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}\item Percentage: 95.6\%\end{highlights}
+        \end{onecolentry}
+
+        \begin{twocolentry}{
+            April 2020
+        }
+            \textbf{Universal Convent Senior Secondary School}, High School\end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}\item Percentage: 93\%\end{highlights}
+        \end{onecolentry}
+
+    \section{Projects}
+
+        \begin{twocolentry}{
+            {\hrefWithoutArrow{https://github.com/udayfs/uniman}{\faIcon{github}\;uniman (Active)}}
+        }
+            \textbf{University Management System}
+            \kern 3.0 pt
+            \AND
+            \kern 3.0 pt
+            \textit{FastAPI, SQLAlchemy, PostgreSQL, React}
+        \end{twocolentry}
+
+        \vspace{0.15 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Designed a scalable University Management System enabling role-based authentication for students, professors, and administrators. Implemented the frontend with \textbf{React, TailwindCSS, and ShadCN UI}, and the backend with \textbf{FastAPI, SQLAlchemy, and PostgreSQL}. Integrated JWT authentication, modular APIs, and deployed on Linux with environment-based configuration.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            {\hrefWithoutArrow{https://github.com/udayfs/rdv}{\faIcon{github}\;rdv (Active)}}
+        }
+            \textbf{Remote Drive View}
+            \kern 3.0 pt
+            \AND
+            \kern 3.0 pt
+            \textit{Golang, OAuth2, Google Cloud Platform, Google Drive API v3}
+            \end{twocolentry}
+
+        \vspace{0.15 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed a command-line tool to authenticate with Google Drive, search files with pagination, recursively list folder structures, and download files programmatically. Implemented \textbf{OAuth2.0 authentication and API integration with constant page-size lookups} and recursive traversal for files/folders.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            {\hrefWithoutArrow{https://github.com/udayfs/iodyme}{\faIcon{github}\;iodyme (Active)}}
+        }
+
+        \textbf{AI powered Job Portal}
+            \kern 3.0 pt
+            \AND
+            \kern 3.0 pt
+            \textit{Next.js, Prisma, OpenAI, PostgreSQL}
+        \end{twocolentry}
+
+        \vspace{0.15 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a modern job-matching platform leveraging \textbf{Next.js} for a responsive \textbf{frontend, NeonDB (serverless Postgres) with Prisma ORM} for scalable data management, and \textbf{OpenAI APIs} for intelligent job recommendations, resume parsing, and AI-driven candidate–employer matching. Designed with a focus on real-time search, personalized job suggestions, and seamless user experience.
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Technical Skills}
+
+        \begin{onecolentry}
+            \textbf{Languages:} C/C++, JavaScript, Python, CSS, Go
+        \end{onecolentry}
+        \vspace{0.1 cm}
+        \begin{onecolentry}
+            \textbf{Technologies and Frameworks:} React.js, Next.js, FastAPI, Prisma, TailwindCSS, Cobra-cli, Google Cloud Platform (GCP), Vercel, Gin
+        \end{onecolentry}
+        \vspace{0.1 cm}
+        \begin{onecolentry}
+            \textbf{Developer Tools:} Visual Studio Code (VS Code), Vim Editor, Git, Docker
+        \end{onecolentry}
+        \vspace{0.1 cm}
+        \begin{onecolentry}
+            \textbf{Databases:} MySQL, PostgreSQL, MongoDB
+        \end{onecolentry}
+
+    \section{Relevant Coursework}
+
+        \begin{onecolentry}
+            \textbf{The Complete Full-Stack Web Development Bootcamp by Udemy:} HTML, CSS, JavaScript, React, TailwindCSS, Node.js, MongoDB
+        \end{onecolentry}
+        \vspace{0.1 cm}
+        \begin{onecolentry}
+            \textbf{Programming Refresher Course by XcelGrad:} Python, FastAPI, Backend technologies like JWTs, APIS and authentication and authorization basics
+        \end{onecolentry}
+        \vspace{0.1 cm}
+        \begin{onecolentry}
+            \textbf{Academic Coursework:} Data Structures and Algorithms, OOP, Design and Analysis of Algorithms, Computer Networks, Operating Systems, Database Management Systems, Machine Learning
+        \end{onecolentry}
+
+\end{document}

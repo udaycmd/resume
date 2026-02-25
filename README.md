@@ -1,7 +1,5 @@
 ## Uday Tiwari - Resume
 
----
-
 This repository contains the LaTeX source code and build automation for my professional resume.
 
 ### Build Instructions
